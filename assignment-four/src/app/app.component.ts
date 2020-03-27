@@ -10,12 +10,16 @@ export class AppComponent {
 	oddList = [];
 	evenList = [];
 
-	OnGameStarted(intervalEvent: number) {
+	onGameStarted(intervalEvent: number) {
 		if (intervalEvent % 2 == 0) {
 			this.evenList.push(intervalEvent);
 		} else {
 			this.oddList.push(intervalEvent);
 		}
 	}
+	
+	onGameStopped(){
+		this.evenList = [];
+		this.oddList = [];}
 
 }

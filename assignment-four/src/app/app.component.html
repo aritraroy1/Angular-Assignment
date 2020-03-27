@@ -1,9 +1,14 @@
 <div class="col-12 mx-auto">
-	<app-game-controll (gameStarted)="OnGameStarted($event)"></app-game-controll>
+	<app-game-controll (gameStarted)="onGameStarted($event)" (gameStopped)="onGameStopped()"></app-game-controll>
 </div>
 <hr>
-<div class="col-12 mx-auto">
-	<app-odd
-		*ngFor="let oddEvent of oddList"></app-odd>
+<div class="row">
+	<div class="col-md-6 col-12 mx-auto">
+		<app-odd *ngFor="let oddEvent of oddList" [event]="oddEvent">
+		</app-odd>
+	</div>
+	<div class="col-md-6 col-12 mx-auto">
+		<app-even *ngFor="let evenEvent of evenList" [event]="evenEvent">
+		</app-even>
+	</div>
 </div>
-
